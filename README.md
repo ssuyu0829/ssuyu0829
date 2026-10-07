@@ -3,8 +3,8 @@
 臺大經濟系畢業，現為臺大資工系林守德教授實驗室專題研究生，研究台股新聞的文字特徵與量化評估。
 關注機器學習特徵的樣本外驗證，以及 LLM 在金融文本上的應用與可信度。
 
-**開發方式**：下列專案由我與 Claude（AI coding assistant）協作完成。我負責定義問題與功能範圍、
-設計資料與系統分工、訂定驗證標準；多數實作程式碼由 Claude 產生，再由我審查、測試與修正。
+**開發方式**：下列專案由我與 AI coding assistant 協作完成。我負責定義問題與功能範圍、
+設計資料與系統分工、訂定驗證標準；實作程式碼包含手刻和AI產生，最後再進行審查、測試與修正。
 
 ## Selected projects
 
@@ -27,9 +27,11 @@ Telegram 打一句話記飲食，Gemini 估熱量與營養素，PWA 看趨勢。
 ### [meeting-assistant — 開會小助手](https://github.com/ssuyu0829/meeting-assistant)
 填可用時段 → 熱力圖看交集 → 組長拍板自動寄信 → 出席與會議紀錄，收在同一個會議底下。
 專案保留了兩個由測試固定下來的安全修正：靜態檔路徑遍歷與 availability 端點越權存取。
+(為coding 101 project 的衍伸版本)
 
 ### [cat-favor — 貓罐頭紀錄](https://github.com/ssuyu0829/cat-favor)
-拍成分標籤 → Gemini 辨識 → 規則庫推乾物比／碳水／磷 → 五隻貓各自評分。所有推算值都明確標示為估算。
+拍成分標籤 → Gemini 辨識 → 規則庫推乾物比／碳水／磷 → 五隻貓各自評分。
+所有推算值都明確標示為估算。
 
 ### [coffee-map — 咖啡廳地圖](https://github.com/ssuyu0829/coffee-map)
 行政區篩選、標籤與 Google Maps 評論摘要。Python／Flask。
