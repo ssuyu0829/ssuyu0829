@@ -37,11 +37,10 @@
 | [**cat-favor**](https://github.com/ssuyu0829/cat-favor)<br>貓罐頭紀錄 | 拍成分標籤，記錄五隻貓各自的喜好 | **AI 只負責擷取、不負責下結論**：Gemini 把標籤轉成欄位，營養換算交給可檢查的規則；缺值的假設直接顯示在畫面上 | React 19 · TypeScript · Vite PWA · Gemini vision · IndexedDB（資料不離開手機）· JSON 備份 · CI |
 | [**coffee-map**](https://github.com/ssuyu0829/coffee-map)<br>咖啡廳地圖 | 依行政區或目前位置找能讀書的咖啡廳 | 兩個資料源座標相距 **100 公尺內才合併，超過就不猜**；評論推斷的標籤用人工評分補強 | Flask · Google Places API（Text／Nearby Search、Place Details）· Café Nomad API · 13 個標籤規則引擎 · 8 tests · [Demo](https://coffee-map.onrender.com)（冷啟動約 30 秒） |
 
-## Research（進行中，程式碼待實驗室同意後公開）
+## Research（進行中）
 
 - 中文 FinBERT 與 Qwen2.5 新聞情緒特徵，在既有價量基準之外是否有樣本外增額資訊
 - 評估設計：時間切分、rank IC 差值、安慰劑檢定、2026-07 起的資料預先宣告為保留集
-- 下一題：用 2024 年才公開的 LLM 替 2021 年的新聞打分，可能混入模型對未來的記憶
 
 ## Toolbox
 
