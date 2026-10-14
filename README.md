@@ -1,38 +1,29 @@
 # 陳思羽 Ssu-Yu Chen
 
-**把問題拆成可以被驗證的規則——不管程式是誰寫的。**
-
-臺大經濟系畢業，臺大資工系林守德教授實驗室專題研究生，研究台股新聞的文字特徵與樣本外評估。
-關注 LLM 在金融文本上的可信度：前瞻偏誤、資訊重複，以及「看起來有效」和「真的有效」之間的距離。
-*Economics graduate turned ML researcher at NTU CSIE. I care less about whether a model scores well and more about whether the score can be trusted.*
-
----
-
-## AI 改變了我的什麼
-
-2026 年，AI 讓「把程式寫出來」的成本降到接近零；我在 3–10 月用 Claude 做出下面五個系統。
-但寫得快之後，瓶頸換了位置：**AI 很會產生看起來合理、其實錯的東西。** 所以我的工作變成三件 AI 不會替我做的事：
-
-1. **定義問題**：要解決誰的什麼困擾、什麼範圍內算完成。
-2. **決定什麼證據才算做對**：哪些性質要用測試鎖住、哪些數字不能輸出。
-3. **抓出看似合理的錯**：例如飲料熱量表裡，同一杯的熱量與糖量隱含的鮮奶量差了 20%。
-
-這也是我做研究的方式：負面結果是合法結果，相關的版本不能算成多份獨立證據。
-
-> 開發分工：多數實作程式碼由 Claude 產生；問題定義、資料與系統設計、驗證標準與測試由我負責並審查。
+臺大經濟系畢業。2026 年 4 月至 9 月在臺大資工系林守德教授實驗室做專題，
+負責台股新聞資料管線與文字特徵的建置與評估。
+目前做台股量化研究：資料管線、回測與樣本外評估。
+LLM 產生的金融文本特徵是否可信（前瞻偏誤、分心效應），是接下來想做的題目。
 
 ---
 
-## 研究（進行中）
+## 研究
 
-- 中文 FinBERT 與 Qwen2.5 新聞情緒特徵，在既有價量基準之外是否有樣本外增額資訊
-- 評估設計：時間切分、rank IC 差值、安慰劑檢定；2026-07 起的資料預先宣告為保留集
+2026 年 4 月至 9 月在臺大資工系林守德教授實驗室做專題，主題是台股預測的資料與評估，兩條線都已收案：
+
+- **新聞文字特徵**：建置 266 檔台股、2021–2026 年的新聞資料管線，以中文 FinBERT 與 Qwen2.5-7B 產生情緒特徵，在實驗室既有市場特徵之上做對照實驗；用安慰劑對照與事先設定的判讀門檻整理結果，新聞特徵沒有帶來穩定改善。
+- **回測與策略評估**：對實驗室策略做消融掃描與新舊回測引擎逐格對帳，把「這個數字能不能信」寫成可重跑的檢核：季度報酬連乘須還原全期報酬、IC 須高於打亂標籤的雜訊地板、股池須為當時組得出來的名單、回測不得在上市前成交。
+
+目前以 FinLab 資料做自己的策略測試，同時補資料結構、演算法、線性代數與機率。
+接下來想做的題目：LLM 情緒分數的預測力有多少來自文字、多少來自模型記憶（以模型公開日切分、遮蔽公司識別資訊重評）；2026-07 起的資料只收集不分析，作為保留集。
 
 ---
 
 ## 專案
 
-每個專案都有 CI 與可重跑的測試；「關鍵判斷」是我在 AI 之外真正做的事。
+2026 年 3–10 月與 Claude 協作做出的五個系統。多數實作程式碼由 Claude 產生；問題定義、資料與系統設計、驗證標準與測試由我負責並審查。
+寫得快之後，瓶頸變成 AI 很會產生看起來合理、其實錯的東西，所以每個專案底下的「關鍵判斷」是我在 AI 之外真正做的事：
+定義問題的範圍、決定什麼證據才算做對、抓出看似合理的錯。每個專案都有 CI 與可重跑的測試。
 
 ### [food-log](https://github.com/ssuyu0829/food-log) 飲食帳本 [![CI](https://github.com/ssuyu0829/food-log/actions/workflows/ci.yml/badge.svg)](https://github.com/ssuyu0829/food-log/actions/workflows/ci.yml)
 
@@ -54,7 +45,7 @@ Telegram 打一句話記飲食，看自己的手搖飲趨勢。
 
 填時段 → 熱力圖 → 組長拍板自動寄信 → 出席與會議紀錄，全部留在同一個會議底下。
 
-- **關鍵判斷**：前身是 2020 年五人團隊的 tkinter 桌面版（Coding 101 全國第 3 名、最佳人氣獎），由我一個人重寫成網站；重寫時找出並用測試鎖住**路徑遍歷**與**越權存取**兩個漏洞。
+- **關鍵判斷**：前身是 2021 年 Coding 101 競賽（全國第 3 名、最佳人氣獎）的五人團隊 tkinter 桌面版，由我一個人重寫成網站；重寫時找出並用測試鎖住**路徑遍歷**與**越權存取**兩個漏洞。
 - **技術**：FastAPI · SQLAlchemy＋Alembic（9 張表）· JWT＋bcrypt · Resend Email API · Supabase Postgres（connection pooler）· Chart.js
 - **驗證**：16 tests · CI
 
@@ -78,7 +69,7 @@ Telegram 打一句話記飲食，看自己的手搖飲趨勢。
 
 ## 工具
 
-- **Research**：Python · R · PyTorch · HuggingFace Transformers · scikit-learn · XGBoost · pandas · Linux GPU server
+- **Research**：Python · R · PyTorch · HuggingFace Transformers · scikit-learn · XGBoost · pandas · FinLab · FinMind · Linux GPU server
 - **Systems**：TypeScript · FastAPI · Flask · React · PostgreSQL／Supabase · SQL · GitHub Actions
 
 ## 聯絡
